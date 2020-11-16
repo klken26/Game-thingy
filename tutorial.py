@@ -1,3 +1,5 @@
+
+
 import turtle
 import time
 import random
@@ -73,7 +75,10 @@ def setup():
     window.tracer(0) # turns off the screen updates
     return window
 
-
+"""
+The code for this function was modified from the code found at
+https://www.edureka.co/blog/python-turtle-module/
+"""
 def main_program():
     """Runs the game"""
     #set up the screen
