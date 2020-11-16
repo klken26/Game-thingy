@@ -1,5 +1,7 @@
 """
-This game is a modified version of snake, whose rules can be found at http://somewebsite.com. 
+This game is a modified version of snake, whose rules 
+can be found at https://www.edureka.co/blog/python-turtle-module/
+ 
 We took reference for the 
 1. Logic of snake behaviour
 2. Creation of the Game screen
@@ -83,10 +85,6 @@ def setup():
     window.tracer(0) # turns off the screen updates
     return window
 
-"""
-The code for this function was modified from the code found at
-https://www.edureka.co/blog/python-turtle-module/
-"""
 def main_program():
     """Runs the game"""
     #set up the screen
