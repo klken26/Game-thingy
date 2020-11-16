@@ -100,6 +100,7 @@ def main_program():
 
         time.sleep(delay)
 
+# Run the programme easily
 if __name__ == '__main__':
     main_program()
     
