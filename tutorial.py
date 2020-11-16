@@ -1,4 +1,12 @@
+"""
+This game is a modified version of snake, whose rules can be found at http://somewebsite.com. 
+We took reference for the 
+1. Logic of snake behaviour
+2. Creation of the Game screen
 
+We made changes to the design of the code by
+1. Using Object Oriented Programming instead of Procedural style
+"""
 
 import turtle
 import time
