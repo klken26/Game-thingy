@@ -70,8 +70,8 @@ class Food:
         self.position.goto(0, 0)
     def move(self):
         # move the food to a random position on screen
-        x = random.randint(-290, 290)
-        y = random.randint(-290, 290)
+        x = random.randint(-250, 250)
+        y = random.randint(-250, 250)
         self.position.goto(x, y)
 
 
@@ -108,6 +108,7 @@ def main_program():
 
         if snake.head.distance(food.position) <15: # calculate the distance between the two objects 
             food.move()
+            delay-=0.01
 
         time.sleep(delay)
 
