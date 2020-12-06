@@ -3,8 +3,6 @@ import time            #needed for adding delays in code later
 import random          #needed for randomizing numbers later, for position of food
 import os
 
-os.system("start ./music.mp3")
-
 
 class Snake:
     def __init__(self):
@@ -230,26 +228,14 @@ def main_program():
         window.onkey(snake.go_left, "a")
       
         if text.score == 0:
-            # text.newpen.clear()
-            # snake.delay = 0.075
-            # text.newpen.color("red")
-            # text.newpen.goto(0, 180)
-            # text.newpen.penup()
-            # text.newpen.hideturtle()
-            # text.newpen.write("The Snake is malnourished :( ", align="center", font=("Courier", 15, "normal"))
             text.newpen.clear()
-            time.sleep(0.5)
-            a = random.randint(0, len(text.quotes)-1)
-            if len(text.quotes[a]) > 80:
-                text.newpen.goto(0, 130) #adds spacing for the paragraph to fit
-                text.newpen.write(text.quotes[a], align="center", font=("Courier", 12, "normal"))
-            elif len(text.quotes[a]) > 30:
-                #add code to make space for long text later 
-                text.newpen.goto(0, 150) #adds spacing for the paragraph to fit
-                text.newpen.write(text.quotes[a], align="center", font=("Courier", 12, "normal"))
-            else:
-                text.newpen.goto(0, 160)
-                text.newpen.write(text.quotes[a], align="center", font=("Courier", 14, "normal"))
+            snake.delay = 0.075
+            text.newpen.color("red")
+            text.newpen.goto(0, 180)
+            text.newpen.penup()
+            text.newpen.hideturtle()
+            text.newpen.write("The Snake is malnourished :( ", align="center", font=("Courier", 15, "normal"))
+           
            
         if len(snake.segments) == 1: #could be put into a function and called with different strings. But meh, let's lengthen the code alittle bit.
             text.newpen.clear()      #basically, if I have less than 3 segments, the text will be cleared and a new one will be printed. 
@@ -289,12 +275,12 @@ def main_program():
             if len(snake.segments) > 3:             # if the length of snake is longer than 3:
                 text.newpen.clear()
                 a = random.randint(0, len(text.quotes)-1)
-                if len(text.quotes[a]) > 30:
+                if len(text.quotes[a]) > 80:
+                    text.newpen.goto(0, 130) #adds spacing for the paragraph to fit
+                    text.newpen.write(text.quotes[a], align="center", font=("Courier", 12, "normal"))
+                elif len(text.quotes[a]) > 30:
                     #add code to make space for long text later 
                     text.newpen.goto(0, 150) #adds spacing for the paragraph to fit
-                    text.newpen.write(text.quotes[a], align="center", font=("Courier", 12, "normal"))
-                elif len(text.quotes[a]) > 80:
-                    text.newpen.goto(0, 120) #adds spacing for the paragraph to fit
                     text.newpen.write(text.quotes[a], align="center", font=("Courier", 12, "normal"))
                 else:
                     text.newpen.goto(0, 160)
@@ -315,4 +301,9 @@ def main_program():
 
 # Run the programme easily, forces the code to be run directly instead of it being imported. 
 if __name__ == '__main__':
+    # Add music
+    os.system("start ./music.mp3")
     main_program()
+    turtle.mainloop()
+    print("hi")
+    os.system("end ./music.mp3")
