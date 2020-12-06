@@ -1,7 +1,9 @@
 import turtle
 import time            #needed for adding delays in code later
 import random          #needed for randomizing numbers later, for position of food
+import os
 
+os.system("start ./music.mp3")
 
 
 class Snake:
@@ -202,7 +204,7 @@ def main_program():
     pen.penup()
     pen.hideturtle()
     pen.goto(0, 0)
-    pen.write("Welcome to snake! Have fun :)", align="center", font=("Courier", 18, "normal"))
+    pen.write("Welcome to SNEK! Have fun :)", align="center", font=("Courier", 18, "normal"))
     #sets a delay and cleans the pen away
     time.sleep(5)
     pen.clear()
@@ -228,13 +230,26 @@ def main_program():
         window.onkey(snake.go_left, "a")
       
         if text.score == 0:
+            # text.newpen.clear()
+            # snake.delay = 0.075
+            # text.newpen.color("red")
+            # text.newpen.goto(0, 180)
+            # text.newpen.penup()
+            # text.newpen.hideturtle()
+            # text.newpen.write("The Snake is malnourished :( ", align="center", font=("Courier", 15, "normal"))
             text.newpen.clear()
-            snake.delay = 0.075
-            text.newpen.color("red")
-            text.newpen.goto(0, 180)
-            text.newpen.penup()
-            text.newpen.hideturtle()
-            text.newpen.write("The Snake is malnourished :( ", align="center", font=("Courier", 15, "normal"))
+            time.sleep(0.5)
+            a = random.randint(0, len(text.quotes)-1)
+            if len(text.quotes[a]) > 80:
+                text.newpen.goto(0, 130) #adds spacing for the paragraph to fit
+                text.newpen.write(text.quotes[a], align="center", font=("Courier", 12, "normal"))
+            elif len(text.quotes[a]) > 30:
+                #add code to make space for long text later 
+                text.newpen.goto(0, 150) #adds spacing for the paragraph to fit
+                text.newpen.write(text.quotes[a], align="center", font=("Courier", 12, "normal"))
+            else:
+                text.newpen.goto(0, 160)
+                text.newpen.write(text.quotes[a], align="center", font=("Courier", 14, "normal"))
            
         if len(snake.segments) == 1: #could be put into a function and called with different strings. But meh, let's lengthen the code alittle bit.
             text.newpen.clear()      #basically, if I have less than 3 segments, the text will be cleared and a new one will be printed. 
@@ -279,7 +294,7 @@ def main_program():
                     text.newpen.goto(0, 150) #adds spacing for the paragraph to fit
                     text.newpen.write(text.quotes[a], align="center", font=("Courier", 12, "normal"))
                 elif len(text.quotes[a]) > 80:
-                    text.newpen.goto(0, 130) #adds spacing for the paragraph to fit
+                    text.newpen.goto(0, 120) #adds spacing for the paragraph to fit
                     text.newpen.write(text.quotes[a], align="center", font=("Courier", 12, "normal"))
                 else:
                     text.newpen.goto(0, 160)
