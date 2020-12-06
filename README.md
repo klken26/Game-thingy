@@ -36,6 +36,8 @@ Class Food:
 	move(self). The food will move to a random position on screen. The x is from -200 to 200, the y is from -230 to 230, based on the size of the screen.
 setup(). Set up the screen, window and snake.
 ```
+## 3. Main Program
+This is the function that runs the game. The speed of the snake and the text displayed will be dependent on the length of the snake
 ```
-main_program(). This is the function that runs the game. The speed of the snake and the text displayed will be dependent on the length of the snake
+main_program(). 
 ```
