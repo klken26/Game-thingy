@@ -301,9 +301,11 @@ def main_program():
 
 # Run the programme easily, forces the code to be run directly instead of it being imported. 
 if __name__ == '__main__':
-    # Add music
-    os.system("start ./music.mp3")
-    main_program()
-    turtle.mainloop()
-    print("hi")
-    os.system("end ./music.mp3")
+    # Add music (only works on windows for now)
+    try:
+        os.system("start ./music.mp3")
+        main_program()
+        turtle.mainloop()
+        print("hi")
+    except:
+        main_program()
