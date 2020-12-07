@@ -303,7 +303,7 @@ def main_program():
 if __name__ == '__main__':
     # Add music (only works on windows for now)
     try:
-        os.system("start ./music.mp3")
+        os.system("start ./music1.mp3")
         main_program()
         turtle.mainloop()
         print("hi")
