@@ -1,6 +1,13 @@
 ﻿# Team 4 - Snake in SUTD?!
 Members: Yong Kang Chia, Kushagra Jain, Liu Nanhan, Chong Shuting, Lawrence Kevin Sagaya Anthony
 
+# Setup
+1. Go into the file where Game-Thingy is stored
+2. open cmd and run
+```
+python snek-OOP.py
+```
+
 # Description 
 This game is a adapted version of the snake game. The description can be found here:
 

@@ -188,16 +188,12 @@ def setup():
     window.setup(width=500,height=500)
     window.tracer(0) # turns off the screen updates
 
-    # Create the objects in the game
-    snake = Snake()
-    food = Food()
-    text = Score()
-    return window,snake,food,text
+    return window
 
 def main_program():
     """Runs the game"""
     #set up the screen
-    window,snake,food,text = setup()
+    window = setup()
 
     #temporary turtle, this will display the opening screen and clear it before the game starts. 
     pen = turtle.Turtle()
@@ -211,6 +207,12 @@ def main_program():
     #sets a delay and cleans the pen away
     time.sleep(5)
     pen.clear()
+
+    
+    # Create the objects in the game
+    snake = Snake()
+    food = Food()
+    text = Score()
 
     # Main game loop
     while True:
@@ -302,10 +304,5 @@ def main_program():
 # Run the programme easily, forces the code to be run directly instead of it being imported. 
 if __name__ == '__main__':
     # Add music (only works on windows for now)
-    try:
-        os.system("start ./music.mp3")
-        main_program()
-        turtle.mainloop()
-        print("hi")
-    except:
-        main_program()
+    os.system("start ./music.mp3")
+    main_program()
